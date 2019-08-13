@@ -7,7 +7,7 @@ pipeline {
         branch 'development'
       }
       steps {
-        echo typo build'
+        echo 'fixed-typo build'
         writeFile file: "application.sh", text: "echo Built ${BUILD_ID} of ${JOB_NAME}"
         archiveArtifacts 'application.sh'
         gateProducesArtifact file: 'application.sh', label: 'Dummy artifact to be consumed by Deploy (master branch) gate'
